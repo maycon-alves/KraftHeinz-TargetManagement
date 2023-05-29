@@ -6,8 +6,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import br.com.fiap.kraftHeinz.targetManagement.DAO.MetaChallengeDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.ProducaoEnergiaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.TesteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.model.MetaChallengeModel;
+import br.com.fiap.kraftHeinz.targetManagement.model.ProducaoEnergiaModel;
 
 public class TesteMain {
 
@@ -22,13 +24,16 @@ public class TesteMain {
 		 */
 		TesteDAO testeDAO = new TesteDAO();
 		MetaChallengeDAO metaDAO = new MetaChallengeDAO();
-		
+		ProducaoEnergiaDAO producaoDAO = new ProducaoEnergiaDAO();
 		
 		/*
 		 * bloco para criação das Models
 		 */
-		Date data = formato.parse("2025-01-01");
-		MetaChallengeModel meta = new MetaChallengeModel("meta-2", "concluir o desenvolvimento", data, false);
+		Date dataMeta = formato.parse("2025-01-01");
+		MetaChallengeModel meta = new MetaChallengeModel("meta-2", "concluir o desenvolvimento", dataMeta, false);
+		Date dataProducao = formato.parse("2023-05-27");
+		ProducaoEnergiaModel producao = new ProducaoEnergiaModel("energia-1" , 150, dataProducao /*,"10"*/);
+		
 		
 		/*
 		 * bloco para execução dos comandos e instruções
@@ -37,6 +42,13 @@ public class TesteMain {
 		//metaDAO.insert(meta);
 		//System.out.println("meta inserida com sucesso: " + meta.toString());
 		System.out.println("\nRecuperado o registro " + "meta-2:\n" + metaDAO.selectById("meta-2"));
+		
+		
+		System.out.println(producao.toString());
+		producaoDAO.insert(producao);
+		System.out.println("\nRecuperado o registro " + "energia-1:\n" + producaoDAO.selectById("energia-1"));
+		
+		
 	}
 
 }
