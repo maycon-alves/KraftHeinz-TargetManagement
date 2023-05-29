@@ -1,8 +1,8 @@
-package br.com.fiap.kreftHeinz.targetManagement.DAO;
+package br.com.fiap.kraftHeinz.targetManagement.DAO;
 
 import java.sql.Connection;
 
-import br.com.fiap.kreftHeinz.targetManagement.factory.ConnectionFactory;
+import br.com.fiap.kraftHeinz.targetManagement.factory.ConnectionFactory;
 
 public class TesteDAO {
 	private Connection conexao;

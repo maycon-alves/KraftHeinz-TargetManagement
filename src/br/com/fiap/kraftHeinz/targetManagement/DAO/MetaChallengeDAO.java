@@ -1,4 +1,4 @@
-package br.com.fiap.kreftHeinz.targetManagement.DAO;
+package br.com.fiap.kraftHeinz.targetManagement.DAO;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -6,8 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import br.com.fiap.kraftHeinz.targetManagement.factory.ConnectionFactory;
 import br.com.fiap.kraftHeinz.targetManagement.model.MetaChallengeModel;
-import br.com.fiap.kreftHeinz.targetManagement.factory.ConnectionFactory;
 
 public class MetaChallengeDAO {
 	private Connection conexao;
