@@ -1,4 +1,4 @@
-package br.com.fiap.kreftHeinz.targetManagement.factory;
+package br.com.fiap.kraftHeinz.targetManagement.factory;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
