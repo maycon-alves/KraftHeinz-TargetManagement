@@ -34,9 +34,9 @@ public class TesteMain {
 		 * bloco para execução dos comandos e instruções
 		 */
 		System.out.println(meta.toString());
-		metaDAO.insert(meta);
-		System.out.println("meta inserida com sucesso: " + meta.toString());
-		
+		//metaDAO.insert(meta);
+		//System.out.println("meta inserida com sucesso: " + meta.toString());
+		System.out.println("\nRecuperado o registro " + "meta-2:\n" + metaDAO.selectById("meta-2"));
 	}
 
 }

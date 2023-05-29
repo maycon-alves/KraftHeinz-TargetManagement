@@ -32,7 +32,7 @@ public class MetaChallengeDAO {
 	
 	public MetaChallengeModel selectById (String id) throws SQLException{
 		MetaChallengeModel meta = null;
-		String sql = "";
+		String sql = "SELECT * FROM T_META_CHALLENGE WHERE id_meta_challenge = ?";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		stmt.setString(1, id);
 		ResultSet rs = stmt.executeQuery();
