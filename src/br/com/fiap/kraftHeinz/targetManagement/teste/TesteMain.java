@@ -5,9 +5,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import br.com.fiap.kraftHeinz.targetManagement.DAO.MetaChallengeDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.TesteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.model.MetaChallengeModel;
-import br.com.fiap.kreftHeinz.targetManagement.DAO.MetaChallengeDAO;
-import br.com.fiap.kreftHeinz.targetManagement.DAO.TesteDAO;
 
 public class TesteMain {
 
