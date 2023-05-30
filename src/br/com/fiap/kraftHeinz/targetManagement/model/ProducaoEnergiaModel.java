@@ -8,18 +8,17 @@ public class ProducaoEnergiaModel {
 	private String idProducao;
 	private Integer quantidadeWatts;
 	private Date dataProducao;
-	// private Fabrica fabrica;
+	private FabricaModel fabrica;
 
 	public ProducaoEnergiaModel() {
 
 	}
 
-	public ProducaoEnergiaModel(String idProducao, Integer quantidadeWatts, Date dataProducao) {
-		//super();
+	public ProducaoEnergiaModel(String idProducao, Integer quantidadeWatts, Date dataProducao, FabricaModel fabrica) {
 		this.idProducao = idProducao;
 		this.quantidadeWatts = quantidadeWatts;
 		this.dataProducao = dataProducao;
-		// this.fabrica = fabrica;
+		this.fabrica = fabrica;
 	}
 
 	public String getIdProducao() {
@@ -41,21 +40,31 @@ public class ProducaoEnergiaModel {
 	public Date getDataProducao() {
 		return dataProducao;
 	}
+
 	public String getDataProducaoSql() {
 		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-		String strDate = formato.format(dataProducao); 
+		String strDate = formato.format(dataProducao);
 		return strDate;
 	}
+
 	public void setDataProducao(Date dataProducao) {
 		this.dataProducao = dataProducao;
 	}
 
-	/*
-	 * public Fabrica getFabrica() { return fabrica; }
-	 */
-	/*
-	 * public void setFabrica(Fabrica fabrica) { this.fabrica = fabrica; }
-	 */
+	public FabricaModel getFabrica() {
+		return fabrica;
+	}
+
+	public void setFabrica(FabricaModel fabrica) {
+		this.fabrica = fabrica;
+	}
+
+	public void setFabricaId(String idFabrica) {
+		FabricaModel fabrica = new FabricaModel();
+		fabrica.setIdFabrica(idFabrica);
+		this.fabrica = fabrica;
+	}
+	
 	@Override
 	public String toString() {
 		return "ProducaoEnergiaModel [idProducao=" + idProducao + ", quantidadeWatts=" + quantidadeWatts

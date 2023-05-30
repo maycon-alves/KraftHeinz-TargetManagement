@@ -39,16 +39,18 @@ public class TesteMain {
 		 */
 		Date dataMeta = formato.parse("2025-01-01");
 		MetaChallengeModel meta = new MetaChallengeModel("meta-2", "concluir o desenvolvimento", dataMeta, false);
+		
+		FabricaModel fabrica = new FabricaModel("10","Brasília","Heinz",true,true,false);
+
 		Date dataProducao = formato.parse("2023-05-27");
+		ProducaoEnergiaModel producao = new ProducaoEnergiaModel("energia-1" , 150, dataProducao , fabrica);
 		
-		ProducaoEnergiaModel producao = new ProducaoEnergiaModel("energia-1" , 150, dataProducao /*,"10"*/);
 		Date dataReuso = formato.parse("2023-05-27");
-		
-		ReusoAguaModel reuso = new ReusoAguaModel("reuso-1" , 500, dataReuso /*,"10"*/);
+		ReusoAguaModel reuso = new ReusoAguaModel("reuso-1" , 500, dataReuso , fabrica);
 		
 		FornecedorModel fornecedor = new FornecedorModel("3" , "tomarilho", "caminhao", false, "Goiás");
 		
-		FabricaModel fabrica = new FabricaModel("10","Brasília","Heinz",true,true,false);
+		
 		
 		/*
 		 * bloco para execução dos comandos e instruções
@@ -58,23 +60,23 @@ public class TesteMain {
 		//System.out.println("meta inserida com sucesso: " + meta.toString());
 		System.out.println("\nRecuperado o registro " + "meta-2:\n" + metaDAO.selectById("meta-2"));
 		
+		System.out.println(fabrica.toString());
+		//fabricaDAO.insert(fabrica);
+		System.out.println("\nRecuperado o registro " + "10:\n" + fabricaDAO.selectById("10"));
 		
 		System.out.println(producao.toString());
-		producaoDAO.insert(producao);
+		//producaoDAO.insert(producao);
 		System.out.println("\nRecuperado o registro " + "energia-1:\n" + producaoDAO.selectById("energia-1"));
 		
 		
 		System.out.println(reuso.toString());
-		reusoDAO.insert(reuso);
+		//reusoDAO.insert(reuso);
 		System.out.println("\nRecuperado o registro " + "reuso-1:\n" + reusoDAO.selectById("reuso-1"));
 		
 		System.out.println(fornecedor.toString());
-		fornecedorDAO.insert(fornecedor);
+		//fornecedorDAO.insert(fornecedor);
 		System.out.println("\nRecuperado o registro " + "3:\n" + fornecedorDAO.selectById("3"));
 		
-		System.out.println(fabrica.toString());
-		fabricaDAO.insert(fabrica);
-		System.out.println("\nRecuperado o registro " + "10:\n" + fabricaDAO.selectById("10"));
 		
 	}
 

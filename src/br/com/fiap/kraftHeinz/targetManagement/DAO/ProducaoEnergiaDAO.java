@@ -23,7 +23,7 @@ public class ProducaoEnergiaDAO {
 		stmt.setString(1, producao.getIdProducao());
 		stmt.setInt(2, producao.getQuantidadeWatts());
 		stmt.setString(3, producao.getDataProducaoSql());
-		stmt.setString(4,"10");
+		stmt.setString(4,producao.getFabrica().getIdFabrica());
 		
 		stmt.execute();
 		stmt.close();
@@ -42,6 +42,7 @@ public class ProducaoEnergiaDAO {
 			producao.setIdProducao(rs.getString("id_producao_eng"));
 			producao.setQuantidadeWatts(rs.getInt("qt_watts"));
 			producao.setDataProducao(rs.getDate("dt_registro"));
+			producao.setFabricaId(rs.getString("fabrica_id_fabrica"));
 		}
 		
 		rs.close();

@@ -23,7 +23,7 @@ public class ReusoAguaDAO {
 		stmt.setString(1, reuso.getIdReuso());
 		stmt.setInt(2, reuso.getVolumeReutilizado());
 		stmt.setString(3, reuso.getDataReusoSql());
-		stmt.setString(4,"10");
+		stmt.setString(4, reuso.getFabrica().getIdFabrica());
 		
 		stmt.execute();
 		stmt.close();
@@ -42,6 +42,7 @@ public class ReusoAguaDAO {
 			reuso.setIdReuso(rs.getString("id_reuso"));
 			reuso.setVolumeReutilizado(rs.getInt("vl_reutilizado"));
 			reuso.setDataReuso(rs.getDate("dt_registro"));
+			reuso.setFabricaId(rs.getString("fabrica_id_fabrica"));
 		}
 		
 		rs.close();
