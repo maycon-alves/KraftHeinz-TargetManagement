@@ -27,7 +27,7 @@ public class ReusoAguaDAO {
 		
 		stmt.execute();
 		stmt.close();
-		System.out.println("Inserido com sucesso.");
+		System.out.println("REUSO_AGUA: Inserido com sucesso.");
 	}
 	
 	public ReusoAguaModel selectById (String id) throws SQLException{

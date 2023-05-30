@@ -27,6 +27,7 @@ private Connection conexao;
 		
 		stmt.execute();
 		stmt.close();
+		System.out.println("INGREDIENTE: Inserido com sucesso.");
 	}
 	
 	public IngredienteModel selectById (String id) throws SQLException{

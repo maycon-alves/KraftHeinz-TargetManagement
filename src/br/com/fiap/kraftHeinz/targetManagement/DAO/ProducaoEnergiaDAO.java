@@ -27,7 +27,7 @@ public class ProducaoEnergiaDAO {
 		
 		stmt.execute();
 		stmt.close();
-		System.out.println("Inserido com sucesso.");
+		System.out.println("PRODUCAO_ENERGIA: Inserida com sucesso.");
 	}
 	
 	public ProducaoEnergiaModel selectById (String id) throws SQLException{

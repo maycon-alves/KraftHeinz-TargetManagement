@@ -32,6 +32,7 @@ private Connection conexao;
 		
 		stmt.execute();
 		stmt.close();
+		System.out.println("LOTE: Inserido com sucesso.");
 	}
 	
 	public LoteModel selectById (String id) throws SQLException{

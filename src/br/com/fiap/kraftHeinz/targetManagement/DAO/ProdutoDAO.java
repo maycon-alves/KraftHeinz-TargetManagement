@@ -29,6 +29,7 @@ private Connection conexao;
 		
 		stmt.execute();
 		stmt.close();
+		System.out.println("PRODUTO: Inserido com sucesso.");
 	}
 	
 	public ProdutoModel selectById (String id) throws SQLException{

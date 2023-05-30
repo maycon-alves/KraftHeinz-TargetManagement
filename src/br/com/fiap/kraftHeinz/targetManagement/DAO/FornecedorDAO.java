@@ -29,7 +29,7 @@ private Connection conexao;
 		
 		stmt.execute();
 		stmt.close();
-		System.out.println("Inserido com sucesso.");
+		System.out.println("FORNECEDOR: Inserido com sucesso.");
 	}
 	
 	public FornecedorModel selectById (String id) throws SQLException{
