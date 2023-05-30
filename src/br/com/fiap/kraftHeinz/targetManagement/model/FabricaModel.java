@@ -13,13 +13,11 @@ public class FabricaModel {
 		
 	}
 	
-	public FabricaModel(String idFabrica, String nmCidadeFabrica, String nomeFabrica, Boolean cdFabricaSustentavel,Boolean cdAguaReuso,
-			Boolean cdEnergiaSustentavel) {
-		super();
+	public FabricaModel(String idFabrica, String nmCidadeFabrica, String nomeFabrica, Boolean cdFabricaSustentavel,Boolean cdAguaReuso,Boolean cdEnergiaSustentavel) {
 		this.idFabrica = idFabrica;
 		this.nmCidadeFabrica = nmCidadeFabrica;
 		this.nomeFabrica = nomeFabrica;
-		this.cdEnergiaSustentavel = cdFabricaSustentavel;
+		this.cdFabricaSustentavel = cdFabricaSustentavel;
 		this.cdAguaReuso = cdAguaReuso;
 		this.cdEnergiaSustentavel = cdEnergiaSustentavel;
 	}

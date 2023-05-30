@@ -50,7 +50,7 @@ public class TesteMain {
 		Date dataMeta = formato.parse("2025-01-01");
 		MetaChallengeModel meta = new MetaChallengeModel("meta-2", "concluir o desenvolvimento", dataMeta, false);
 		
-		FabricaModel fabrica = new FabricaModel("10","Brasília","Heinz",true,true,false);
+		FabricaModel fabrica = new FabricaModel("10", "Brasília", "Heinz", true, true, false);
 
 		Date dataProducao = formato.parse("2023-05-27");
 		ProducaoEnergiaModel producao = new ProducaoEnergiaModel("energia-1" , 150, dataProducao , fabrica);
@@ -66,6 +66,7 @@ public class TesteMain {
 		
 		Date dataProducaoLote = formato.parse("2023-05-27");
 		LoteModel lote = new LoteModel("555", fabrica, produto, 1000, 100, dataProducaoLote, 1000, 300);
+		
 		/*
 		 * bloco para execução dos comandos e instruções
 		 */
@@ -75,33 +76,33 @@ public class TesteMain {
 		System.out.println("\nRecuperado o registro [meta-2]:\n" + metaDAO.selectById("meta-2"));
 		
 		System.out.println(fabrica.toString());
-		//fabricaDAO.insert(fabrica);
-		System.out.println("\nRecuperado o registro [10]:\n" + fabricaDAO.selectById("10"));
+		fabricaDAO.insert(fabrica);
+		//System.out.println("\nRecuperado o registro [10]:\n" + fabricaDAO.selectById("10"));
 		
 		System.out.println(producao.toString());
-		//producaoDAO.insert(producao);
-		System.out.println("\nRecuperado o registro [energia-1]:\n" + producaoDAO.selectById("energia-1"));
+		producaoDAO.insert(producao);
+		//System.out.println("\nRecuperado o registro [energia-1]:\n" + producaoDAO.selectById("energia-1"));
 		
 		
 		System.out.println(reuso.toString());
-		//reusoDAO.insert(reuso);
-		System.out.println("\nRecuperado o registro [reuso-1]:\n" + reusoDAO.selectById("reuso-1"));
+		reusoDAO.insert(reuso);
+		//System.out.println("\nRecuperado o registro [reuso-1]:\n" + reusoDAO.selectById("reuso-1"));
 		
 		System.out.println(fornecedor.toString());
-		//fornecedorDAO.insert(fornecedor);
-		System.out.println("\nRecuperado o registro [3]:\n" + fornecedorDAO.selectById("3"));
+		fornecedorDAO.insert(fornecedor);
+		//System.out.println("\nRecuperado o registro [3]:\n" + fornecedorDAO.selectById("3"));
 		
 		System.out.println(ingrediente.toString());
-		//ingredienteDAO.insert(ingrediente);
-		System.out.println("\nRecuperado o registro [25]:\n" + ingredienteDAO.selectById("25"));
+		ingredienteDAO.insert(ingrediente);
+		//System.out.println("\nRecuperado o registro [25]:\n" + ingredienteDAO.selectById("25"));
 		
 		System.out.println(produto.toString());
-		//produtoDAO.insert(produto);
-		System.out.println("\nRecuperado o registro [30]:\n" + produtoDAO.selectById("30"));
+		produtoDAO.insert(produto);
+		//System.out.println("\nRecuperado o registro [30]:\n" + produtoDAO.selectById("30"));
 		
 		System.out.println(lote.toString());
-		//loteDAO.insert(lote);
-		System.out.println("\nRecuperado o registro [555]:\n" + loteDAO.selectById("555"));
+		loteDAO.insert(lote);
+		//System.out.println("\nRecuperado o registro [555]:\n" + loteDAO.selectById("555"));
 	}
 
 }

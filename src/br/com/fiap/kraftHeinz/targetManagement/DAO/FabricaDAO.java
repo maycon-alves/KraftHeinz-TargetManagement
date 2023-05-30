@@ -17,7 +17,7 @@ private Connection conexao;
 	
 	public void insert(FabricaModel fabrica) throws SQLException{
 		String sql = "INSERT INTO T_FABRICA (t_fabrica.id_fabrica, nm_cidade_fabrica,nm_fabrica,cd_fabrica_sustentavel,cd_agua_reuso,cd_energia_sustentavel)\r\n"
-				+ "VALUES (?,?,?,?,?,?);";
+				+ "VALUES (?,?,?,?,?,?)";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		
 		stmt.setString(1,fabrica.getIdFabrica());
