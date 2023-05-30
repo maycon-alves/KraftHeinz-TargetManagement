@@ -7,14 +7,20 @@ import java.util.Date;
 
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FabricaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FornecedorDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.IngredienteDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.LoteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.MetaChallengeDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ProducaoEnergiaDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.ProdutoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ReusoAguaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.TesteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.model.FabricaModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.FornecedorModel;
+import br.com.fiap.kraftHeinz.targetManagement.model.IngredienteModel;
+import br.com.fiap.kraftHeinz.targetManagement.model.LoteModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.MetaChallengeModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.ProducaoEnergiaModel;
+import br.com.fiap.kraftHeinz.targetManagement.model.ProdutoModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.ReusoAguaModel;
 
 public class TesteMain {
@@ -30,10 +36,14 @@ public class TesteMain {
 		 */
 		TesteDAO testeDAO = new TesteDAO();
 		MetaChallengeDAO metaDAO = new MetaChallengeDAO();
+		FabricaDAO fabricaDAO = new FabricaDAO();
 		ProducaoEnergiaDAO producaoDAO = new ProducaoEnergiaDAO();
 		ReusoAguaDAO reusoDAO = new ReusoAguaDAO();
 		FornecedorDAO fornecedorDAO = new FornecedorDAO();
-		FabricaDAO fabricaDAO = new FabricaDAO();
+		IngredienteDAO ingredienteDAO = new IngredienteDAO();
+		ProdutoDAO produtoDAO = new ProdutoDAO();
+		LoteDAO loteDAO = new LoteDAO();
+		
 		/*
 		 * bloco para criação das Models
 		 */
@@ -50,34 +60,48 @@ public class TesteMain {
 		
 		FornecedorModel fornecedor = new FornecedorModel("3" , "tomarilho", "caminhao", false, "Goiás");
 		
+		IngredienteModel ingrediente = new IngredienteModel("25", "Tomate", 2);
 		
+		ProdutoModel produto = new ProdutoModel("30", "Molho de Tomate", false, 365);
 		
+		Date dataProducaoLote = formato.parse("2023-05-27");
+		LoteModel lote = new LoteModel("555", fabrica, produto, 1000, 100, dataProducaoLote, 1000, 300);
 		/*
 		 * bloco para execução dos comandos e instruções
 		 */
 		System.out.println(meta.toString());
 		//metaDAO.insert(meta);
 		//System.out.println("meta inserida com sucesso: " + meta.toString());
-		System.out.println("\nRecuperado o registro " + "meta-2:\n" + metaDAO.selectById("meta-2"));
+		System.out.println("\nRecuperado o registro [meta-2]:\n" + metaDAO.selectById("meta-2"));
 		
 		System.out.println(fabrica.toString());
 		//fabricaDAO.insert(fabrica);
-		System.out.println("\nRecuperado o registro " + "10:\n" + fabricaDAO.selectById("10"));
+		System.out.println("\nRecuperado o registro [10]:\n" + fabricaDAO.selectById("10"));
 		
 		System.out.println(producao.toString());
 		//producaoDAO.insert(producao);
-		System.out.println("\nRecuperado o registro " + "energia-1:\n" + producaoDAO.selectById("energia-1"));
+		System.out.println("\nRecuperado o registro [energia-1]:\n" + producaoDAO.selectById("energia-1"));
 		
 		
 		System.out.println(reuso.toString());
 		//reusoDAO.insert(reuso);
-		System.out.println("\nRecuperado o registro " + "reuso-1:\n" + reusoDAO.selectById("reuso-1"));
+		System.out.println("\nRecuperado o registro [reuso-1]:\n" + reusoDAO.selectById("reuso-1"));
 		
 		System.out.println(fornecedor.toString());
 		//fornecedorDAO.insert(fornecedor);
-		System.out.println("\nRecuperado o registro " + "3:\n" + fornecedorDAO.selectById("3"));
+		System.out.println("\nRecuperado o registro [3]:\n" + fornecedorDAO.selectById("3"));
 		
+		System.out.println(ingrediente.toString());
+		//ingredienteDAO.insert(ingrediente);
+		System.out.println("\nRecuperado o registro [25]:\n" + ingredienteDAO.selectById("25"));
 		
+		System.out.println(produto.toString());
+		//produtoDAO.insert(produto);
+		System.out.println("\nRecuperado o registro [30]:\n" + produtoDAO.selectById("30"));
+		
+		System.out.println(lote.toString());
+		//loteDAO.insert(lote);
+		System.out.println("\nRecuperado o registro [555]:\n" + loteDAO.selectById("555"));
 	}
 
 }

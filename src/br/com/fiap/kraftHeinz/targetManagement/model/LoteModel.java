@@ -18,11 +18,12 @@ public class LoteModel {
 
 	}
 
-	public LoteModel(String idLote, FabricaModel fabrica, Integer quantidadeProduto, Integer quantidadeDoada,
+	public LoteModel(String idLote, FabricaModel fabrica, ProdutoModel produto,Integer quantidadeProduto, Integer quantidadeDoada,
 			Date dataProducaoLote, Integer quantidadeAguaGasto, Integer quantidadeEnergiaGasto) {
 		super();
 		this.idLote = idLote;
 		this.fabrica = fabrica;
+		this.produto = produto;
 		this.quantidadeProduto = quantidadeProduto;
 		this.quantidadeDoada = quantidadeDoada;
 		this.dataProducaoLote = dataProducaoLote;
