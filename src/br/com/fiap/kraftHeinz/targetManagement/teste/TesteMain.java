@@ -5,10 +5,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import br.com.fiap.kraftHeinz.targetManagement.DAO.FabricaDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.FornecedorDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.MetaChallengeDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ProducaoEnergiaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ReusoAguaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.TesteDAO;
+import br.com.fiap.kraftHeinz.targetManagement.model.FabricaModel;
+import br.com.fiap.kraftHeinz.targetManagement.model.FornecedorModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.MetaChallengeModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.ProducaoEnergiaModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.ReusoAguaModel;
@@ -28,16 +32,23 @@ public class TesteMain {
 		MetaChallengeDAO metaDAO = new MetaChallengeDAO();
 		ProducaoEnergiaDAO producaoDAO = new ProducaoEnergiaDAO();
 		ReusoAguaDAO reusoDAO = new ReusoAguaDAO();
-		
+		FornecedorDAO fornecedorDAO = new FornecedorDAO();
+		FabricaDAO fabricaDAO = new FabricaDAO();
 		/*
 		 * bloco para criação das Models
 		 */
 		Date dataMeta = formato.parse("2025-01-01");
 		MetaChallengeModel meta = new MetaChallengeModel("meta-2", "concluir o desenvolvimento", dataMeta, false);
 		Date dataProducao = formato.parse("2023-05-27");
+		
 		ProducaoEnergiaModel producao = new ProducaoEnergiaModel("energia-1" , 150, dataProducao /*,"10"*/);
 		Date dataReuso = formato.parse("2023-05-27");
+		
 		ReusoAguaModel reuso = new ReusoAguaModel("reuso-1" , 500, dataReuso /*,"10"*/);
+		
+		FornecedorModel fornecedor = new FornecedorModel("3" , "tomarilho", "caminhao", false, "Goiás");
+		
+		FabricaModel fabrica = new FabricaModel("10","Brasília","Heinz",true,true,false);
 		
 		/*
 		 * bloco para execução dos comandos e instruções
@@ -56,6 +67,14 @@ public class TesteMain {
 		System.out.println(reuso.toString());
 		reusoDAO.insert(reuso);
 		System.out.println("\nRecuperado o registro " + "reuso-1:\n" + reusoDAO.selectById("reuso-1"));
+		
+		System.out.println(fornecedor.toString());
+		fornecedorDAO.insert(fornecedor);
+		System.out.println("\nRecuperado o registro " + "3:\n" + fornecedorDAO.selectById("3"));
+		
+		System.out.println(fabrica.toString());
+		fabricaDAO.insert(fabrica);
+		System.out.println("\nRecuperado o registro " + "10:\n" + fabricaDAO.selectById("10"));
 		
 	}
 
