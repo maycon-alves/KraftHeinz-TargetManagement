@@ -34,7 +34,7 @@ private Connection conexao;
 	
 	public ProdutoModel selectById (String id) throws SQLException{
 		ProdutoModel produto = null;
-		String sql = "SELECT * FROM T_LOTE WHERE id_produto = ?";
+		String sql = "SELECT * FROM T_PRODUTO WHERE id_produto = ?";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		stmt.setString(1, id);
 		ResultSet rs = stmt.executeQuery();

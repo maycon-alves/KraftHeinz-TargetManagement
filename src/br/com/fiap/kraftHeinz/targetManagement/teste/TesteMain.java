@@ -77,32 +77,32 @@ public class TesteMain {
 		
 		System.out.println(fabrica.toString());
 		//fabricaDAO.insert(fabrica);
-		//System.out.println("\nRecuperado o registro [10]:\n" + fabricaDAO.selectById("10"));
+		System.out.println("\nRecuperado o registro [10]:\n" + fabricaDAO.selectById("10"));
 		
 		System.out.println(producao.toString());
 		//producaoDAO.insert(producao);
-		//System.out.println("\nRecuperado o registro [energia-1]:\n" + producaoDAO.selectById("energia-1"));
+		System.out.println("\nRecuperado o registro [energia-1]:\n" + producaoDAO.selectById("energia-1"));
 		
 		
 		System.out.println(reuso.toString());
-		reusoDAO.insert(reuso);
-		//System.out.println("\nRecuperado o registro [reuso-1]:\n" + reusoDAO.selectById("reuso-1"));
+		//reusoDAO.insert(reuso);
+		System.out.println("\nRecuperado o registro [reuso-1]:\n" + reusoDAO.selectById("reuso-1"));
 		
 		System.out.println(fornecedor.toString());
-		fornecedorDAO.insert(fornecedor);
-		//System.out.println("\nRecuperado o registro [3]:\n" + fornecedorDAO.selectById("3"));
+		//fornecedorDAO.insert(fornecedor);
+		System.out.println("\nRecuperado o registro [3]:\n" + fornecedorDAO.selectById("3"));
 		
 		System.out.println(ingrediente.toString());
-		ingredienteDAO.insert(ingrediente);
-		//System.out.println("\nRecuperado o registro [25]:\n" + ingredienteDAO.selectById("25"));
+		//ingredienteDAO.insert(ingrediente);
+		System.out.println("\nRecuperado o registro [25]:\n" + ingredienteDAO.selectById("25"));
 		
 		System.out.println(produto.toString());
-		produtoDAO.insert(produto);
-		//System.out.println("\nRecuperado o registro [30]:\n" + produtoDAO.selectById("30"));
+		//produtoDAO.insert(produto);
+		System.out.println("\nRecuperado o registro [30]:\n" + produtoDAO.selectById("30"));
 		
 		System.out.println(lote.toString());
-		loteDAO.insert(lote);
-		//System.out.println("\nRecuperado o registro [555]:\n" + loteDAO.selectById("555"));
+		//loteDAO.insert(lote);
+		System.out.println("\nRecuperado o registro [555]:\n" + loteDAO.selectById("555"));
 	}
 
 }

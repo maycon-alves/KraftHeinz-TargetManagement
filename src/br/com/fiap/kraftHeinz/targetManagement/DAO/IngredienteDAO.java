@@ -18,7 +18,7 @@ private Connection conexao;
 
 	public void insert(IngredienteModel ingrediente) throws SQLException{
 		String sql = "INSERT INTO T_INGREDIENTE (t_ingrediente.id_ingr, nm_ingrediente,nr_impacto_amb)\r\n"
-				+ "VALUES (?,?,?);";
+				+ "VALUES (?,?,?)";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		
 		stmt.setString(1, ingrediente.getIdIngrediente());
@@ -32,7 +32,7 @@ private Connection conexao;
 	
 	public IngredienteModel selectById (String id) throws SQLException{
 		IngredienteModel ingrediente = null;
-		String sql = "SELECT * FROM T_LOTE WHERE id_ingr = ?";
+		String sql = "SELECT * FROM T_INGREDIENTE WHERE id_ingr = ?";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		stmt.setString(1, id);
 		ResultSet rs = stmt.executeQuery();

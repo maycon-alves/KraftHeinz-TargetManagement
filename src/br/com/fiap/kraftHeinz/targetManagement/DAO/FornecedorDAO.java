@@ -18,7 +18,7 @@ private Connection conexao;
 	
 	public void insert(FornecedorModel fornecedor) throws SQLException{
 		String sql = "INSERT INTO T_FORNECEDOR (id_fncd, nm_nome, cd_tipo_transporte, cd_frota_sustentavel, nm_cidade)\r\n"
-				+ "VALUES (?,?,?,?,?);";
+				+ "VALUES (?,?,?,?,?)";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		
 		stmt.setString(1,fornecedor.getIdFornecedor());
