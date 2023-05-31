@@ -15,6 +15,7 @@ import br.com.fiap.kraftHeinz.targetManagement.DAO.LoteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.MetaChallengeDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ProducaoEnergiaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ProdutoDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.ReceitaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ReusoAguaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.TesteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.model.AbastecimentoModel;
@@ -27,6 +28,7 @@ import br.com.fiap.kraftHeinz.targetManagement.model.LoteModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.MetaChallengeModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.ProducaoEnergiaModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.ProdutoModel;
+import br.com.fiap.kraftHeinz.targetManagement.model.ReceitaModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.ReusoAguaModel;
 
 public class TesteMain {
@@ -52,6 +54,7 @@ public class TesteMain {
 		FabricaProdutoDAO fabricaProdutoDAO = new FabricaProdutoDAO();
 		AbastecimentoDAO abastecimentoDAO = new AbastecimentoDAO();
 		FornecimentoDAO fornecimentoDAO = new FornecimentoDAO();
+		ReceitaDAO receitaDAO = new ReceitaDAO();
 		
 		/*
 		 * bloco para criação das Models
@@ -83,54 +86,60 @@ public class TesteMain {
 		
 		FornecimentoModel fornecimento = new FornecimentoModel("3", "25", true);
 		
+		ReceitaModel receita = new ReceitaModel("RECEITA-1", "30", "25", 1, "Kg");
+		
 		/*
 		 * bloco para execução dos comandos e instruções
 		 */
 		System.out.println(meta.toString());
 		//metaDAO.insert(meta);
 		//System.out.println("meta inserida com sucesso: " + meta.toString());
-		System.out.println("\nRecuperado o registro [meta-2]:\n" + metaDAO.selectById("meta-2"));
+		System.out.println("Recuperado o registro [meta-2]:\n" + metaDAO.selectById("meta-2") + "\n");
 		
 		System.out.println(fabrica.toString());
 		//fabricaDAO.insert(fabrica);
-		System.out.println("\nRecuperado o registro [10]:\n" + fabricaDAO.selectById("10"));
+		System.out.println("Recuperado o registro [10]:\n" + fabricaDAO.selectById("10") + "\n");
 		
 		System.out.println(producao.toString());
 		//producaoDAO.insert(producao);
-		System.out.println("\nRecuperado o registro [energia-1]:\n" + producaoDAO.selectById("energia-1"));
+		System.out.println("Recuperado o registro [energia-1]:\n" + producaoDAO.selectById("energia-1") + "\n");
 		
 		
 		System.out.println(reuso.toString());
 		//reusoDAO.insert(reuso);
-		System.out.println("\nRecuperado o registro [reuso-1]:\n" + reusoDAO.selectById("reuso-1"));
+		System.out.println("Recuperado o registro [reuso-1]:\n" + reusoDAO.selectById("reuso-1") + "\n");
 		
 		System.out.println(fornecedor.toString());
 		//fornecedorDAO.insert(fornecedor);
-		System.out.println("\nRecuperado o registro [3]:\n" + fornecedorDAO.selectById("3"));
+		System.out.println("Recuperado o registro [3]:\n" + fornecedorDAO.selectById("3") + "\n");
 		
 		System.out.println(ingrediente.toString());
 		//ingredienteDAO.insert(ingrediente);
-		System.out.println("\nRecuperado o registro [25]:\n" + ingredienteDAO.selectById("25"));
+		System.out.println("Recuperado o registro [25]:\n" + ingredienteDAO.selectById("25") + "\n");
 		
 		System.out.println(produto.toString());
 		//produtoDAO.insert(produto);
-		System.out.println("\nRecuperado o registro [30]:\n" + produtoDAO.selectById("30"));
+		System.out.println("Recuperado o registro [30]:\n" + produtoDAO.selectById("30") + "\n");
 		
 		System.out.println(lote.toString());
 		//loteDAO.insert(lote);
-		System.out.println("\nRecuperado o registro [555]:\n" + loteDAO.selectById("555"));
+		System.out.println("Recuperado o registro [555]:\n" + loteDAO.selectById("555") + "\n");
 		
 		System.out.println(fabricaProduto.toString());
 		//fabricaProdutoDAO.insert(fabricaProduto);
-		System.out.println("\nRecuperado os produtos produzidos na Fabrica [10]:\n" + fabricaProdutoDAO.getProdutosByFabrica("10"));
+		System.out.println("Recuperado os produtos produzidos na Fabrica [10]:\n" + fabricaProdutoDAO.getProdutosByFabrica("10") + "\n");
 		
 		System.out.println(abastecimento.toString());
 		//abastecimentoDAO.insert(abastecimento);
-		System.out.println("\nRecuperado as fabricas atendidas pelo fornecedor [3]" + abastecimentoDAO.getFabricaByFornecedores("3"));
+		System.out.println("Recuperado as fabricas atendidas pelo fornecedor [3]" + abastecimentoDAO.getFabricaByFornecedores("3") + "\n");
 		
 		System.out.println(fornecimento.toString());
 		//fornecimentoDAO.insert(fornecimento);
-		System.out.println("\nRecuperado os fornecedores do produto [25]" + fornecimentoDAO.getFornecedoresByIngrediente("25"));
+		System.out.println("Recuperado os fornecedores do produto [25]" + fornecimentoDAO.getFornecedoresByIngrediente("25") + "\n");
+		
+		System.out.println(receita.toString());
+		//receitaDAO.insert(receita);
+		System.out.println("Recuperado as ingredientes utilizados no produto [30]" + receitaDAO.getIngredientesByProduto("30") + "\n");
 		
 	}
 
