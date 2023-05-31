@@ -50,6 +50,10 @@ public class ProdutoModel {
 		this.diasValidade = diasValidade;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "ProdutoModel [idProduto=" + idProduto + ", nomeProduto=" + nomeProduto + ", embalagemReciclavel="
+				+ embalagemReciclavel + ", diasValidade=" + diasValidade + "]";
+	}
 	
 }

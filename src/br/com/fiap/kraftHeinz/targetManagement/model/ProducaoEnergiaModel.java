@@ -64,11 +64,11 @@ public class ProducaoEnergiaModel {
 		fabrica.setIdFabrica(idFabrica);
 		this.fabrica = fabrica;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "ProducaoEnergiaModel [idProducao=" + idProducao + ", quantidadeWatts=" + quantidadeWatts
-				+ ", dataProducao=" + dataProducao + "]";
+				+ ", dataProducao=" + dataProducao + ", fabrica=" + fabrica + "]";
 	}
 
 }

@@ -119,10 +119,9 @@ public class LoteModel {
 
 	@Override
 	public String toString() {
-		return "LoteModel [idLote=" + idLote + ", fabrica=" + fabrica + ", quantidadeProduto=" + quantidadeProduto
-				+ ", quantidadeDoada=" + quantidadeDoada + ", dataProducao=" + dataProducaoLote
+		return "LoteModel [idLote=" + idLote + ", fabrica=" + fabrica + ", produto=" + produto + ", quantidadeProduto="
+				+ quantidadeProduto + ", quantidadeDoada=" + quantidadeDoada + ", dataProducaoLote=" + dataProducaoLote
 				+ ", quantidadeAguaGasto=" + quantidadeAguaGasto + ", quantidadeEnergiaGasto=" + quantidadeEnergiaGasto
 				+ "]";
 	}
-
 }

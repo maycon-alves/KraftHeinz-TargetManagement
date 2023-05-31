@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FabricaDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.FabricaProdutoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FornecedorDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.IngredienteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.LoteDAO;
@@ -15,6 +16,7 @@ import br.com.fiap.kraftHeinz.targetManagement.DAO.ProdutoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ReusoAguaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.TesteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.model.FabricaModel;
+import br.com.fiap.kraftHeinz.targetManagement.model.FabricaProdutoModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.FornecedorModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.IngredienteModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.LoteModel;
@@ -43,6 +45,8 @@ public class TesteMain {
 		IngredienteDAO ingredienteDAO = new IngredienteDAO();
 		ProdutoDAO produtoDAO = new ProdutoDAO();
 		LoteDAO loteDAO = new LoteDAO();
+		FabricaProdutoDAO fabricaProdutoDAO = new FabricaProdutoDAO();
+		
 		
 		/*
 		 * bloco para criação das Models
@@ -66,6 +70,8 @@ public class TesteMain {
 		
 		Date dataProducaoLote = formato.parse("2023-05-27");
 		LoteModel lote = new LoteModel("555", fabrica, produto, 1000, 100, dataProducaoLote, 1000, 300);
+		
+		FabricaProdutoModel fabricaProduto = new FabricaProdutoModel("10","30");
 		
 		/*
 		 * bloco para execução dos comandos e instruções
@@ -103,6 +109,11 @@ public class TesteMain {
 		System.out.println(lote.toString());
 		//loteDAO.insert(lote);
 		System.out.println("\nRecuperado o registro [555]:\n" + loteDAO.selectById("555"));
+		
+		System.out.println(fabricaProduto.toString());
+		//fabricaProdutoDAO.insert(fabricaProduto);
+		System.out.println("\nRecuperado os produtos produzidos na Fabrica [10]:\n" + fabricaProdutoDAO.getProdutosByFabrica("10"));
+		
 	}
 
 }

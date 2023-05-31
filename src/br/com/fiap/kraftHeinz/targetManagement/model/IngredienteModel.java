@@ -44,8 +44,5 @@ public class IngredienteModel {
 	public String toString() {
 		return "IngredienteModel [idIngrediente=" + idIngrediente + ", nomeIngrediente=" + nomeIngrediente
 				+ ", impactoAmbiental=" + impactoAmbiental + "]";
-	}
-	
-	
-	
+	}	
 }
