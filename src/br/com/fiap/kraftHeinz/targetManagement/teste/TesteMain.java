@@ -48,7 +48,7 @@ public class TesteMain {
 		 * bloco para criação das Models
 		 */
 		Date dataMeta = formato.parse("2025-01-01");
-		MetaChallengeModel meta = new MetaChallengeModel("meta-2", "concluir o desenvolvimento", dataMeta, false);
+		MetaChallengeModel meta = new MetaChallengeModel("meta-3", "concluir o desenvolvimento", dataMeta, false);
 		
 		FabricaModel fabrica = new FabricaModel("10", "Brasília", "Heinz", true, true, false);
 
@@ -76,11 +76,11 @@ public class TesteMain {
 		System.out.println("\nRecuperado o registro [meta-2]:\n" + metaDAO.selectById("meta-2"));
 		
 		System.out.println(fabrica.toString());
-		fabricaDAO.insert(fabrica);
+		//fabricaDAO.insert(fabrica);
 		//System.out.println("\nRecuperado o registro [10]:\n" + fabricaDAO.selectById("10"));
 		
 		System.out.println(producao.toString());
-		producaoDAO.insert(producao);
+		//producaoDAO.insert(producao);
 		//System.out.println("\nRecuperado o registro [energia-1]:\n" + producaoDAO.selectById("energia-1"));
 		
 		

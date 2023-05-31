@@ -26,8 +26,9 @@ private Connection conexao;
 		stmt.setBoolean(4,fabrica.getCdFabricaSustentavel());
 		stmt.setBoolean(5,fabrica.getCdAguaReuso());
 		stmt.setBoolean(6,fabrica.getCdEnergiaSustentavel());
-		
+		System.out.println("FABRICA - iniciando insert");
 		stmt.execute();
+		System.out.println("FABRICA - fechando conexao");
 		stmt.close();
 		System.out.println("FABRICA - Inserida com sucesso.");
 	}

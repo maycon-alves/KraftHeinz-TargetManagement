@@ -17,7 +17,7 @@ public class ReusoAguaDAO {
 	
 	public void insert(ReusoAguaModel reuso) throws SQLException{
 		String sql = "INSERT INTO T_REUSO_AGUA (t_reuso_agua.id_reuso, vl_reutilizado,dt_registro, t_reuso_agua.fabrica_id_fabrica)\r\n"
-				+ "VALUES (?, ?, to_date(?, 'yyyy-mm-dd'), ?);";
+				+ "VALUES (?, ?, to_date(?, 'yyyy-mm-dd'), ?)";
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		
 		stmt.setString(1, reuso.getIdReuso());
