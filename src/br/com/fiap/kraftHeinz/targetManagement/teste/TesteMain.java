@@ -9,6 +9,7 @@ import br.com.fiap.kraftHeinz.targetManagement.DAO.AbastecimentoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FabricaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FabricaProdutoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FornecedorDAO;
+import br.com.fiap.kraftHeinz.targetManagement.DAO.FornecimentoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.IngredienteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.LoteDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.MetaChallengeDAO;
@@ -20,6 +21,7 @@ import br.com.fiap.kraftHeinz.targetManagement.model.AbastecimentoModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.FabricaModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.FabricaProdutoModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.FornecedorModel;
+import br.com.fiap.kraftHeinz.targetManagement.model.FornecimentoModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.IngredienteModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.LoteModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.MetaChallengeModel;
@@ -49,7 +51,7 @@ public class TesteMain {
 		LoteDAO loteDAO = new LoteDAO();
 		FabricaProdutoDAO fabricaProdutoDAO = new FabricaProdutoDAO();
 		AbastecimentoDAO abastecimentoDAO = new AbastecimentoDAO();
-		
+		FornecimentoDAO fornecimentoDAO = new FornecimentoDAO();
 		
 		/*
 		 * bloco para criação das Models
@@ -78,6 +80,8 @@ public class TesteMain {
 		
 		Date dataAbastecimento = formato.parse("2023-05-27");
 		AbastecimentoModel abastecimento = new AbastecimentoModel("10", "3", dataAbastecimento);
+		
+		FornecimentoModel fornecimento = new FornecimentoModel("3", "25", true);
 		
 		/*
 		 * bloco para execução dos comandos e instruções
@@ -124,7 +128,9 @@ public class TesteMain {
 		//abastecimentoDAO.insert(abastecimento);
 		System.out.println("\nRecuperado as fabricas atendidas pelo fornecedor [3]" + abastecimentoDAO.getFabricaByFornecedores("3"));
 		
-		
+		System.out.println(fornecimento.toString());
+		//fornecimentoDAO.insert(fornecimento);
+		System.out.println("\nRecuperado os fornecedores do produto [25]" + fornecimentoDAO.getFornecedoresByIngrediente("25"));
 		
 	}
 
