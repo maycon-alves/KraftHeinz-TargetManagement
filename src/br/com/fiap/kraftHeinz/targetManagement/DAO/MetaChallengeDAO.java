@@ -28,6 +28,7 @@ public class MetaChallengeDAO {
 		
 		stmt.execute();
 		stmt.close();
+		System.out.println("META_CHALLENGE: Inserida com sucesso.");
 	}
 	
 	public MetaChallengeModel selectById (String id) throws SQLException{

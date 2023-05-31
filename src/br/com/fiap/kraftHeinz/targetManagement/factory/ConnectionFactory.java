@@ -10,7 +10,7 @@ public class ConnectionFactory {
 	
 	public Connection conectar() {
 		try {
-			return DriverManager.getConnection(ORACLE, "RM", "SENHA");
+			return DriverManager.getConnection(ORACLE, "RM96513", "100700");
 		} catch (SQLException e) {
 			System.out.println("Erro ao conectar na base de dados...");
 			throw new RuntimeException(e);
