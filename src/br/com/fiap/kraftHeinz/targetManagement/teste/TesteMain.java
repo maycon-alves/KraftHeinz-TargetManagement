@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import br.com.fiap.kraftHeinz.targetManagement.DAO.AbastecimentoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FabricaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FabricaProdutoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.FornecedorDAO;
@@ -15,6 +16,7 @@ import br.com.fiap.kraftHeinz.targetManagement.DAO.ProducaoEnergiaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ProdutoDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.ReusoAguaDAO;
 import br.com.fiap.kraftHeinz.targetManagement.DAO.TesteDAO;
+import br.com.fiap.kraftHeinz.targetManagement.model.AbastecimentoModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.FabricaModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.FabricaProdutoModel;
 import br.com.fiap.kraftHeinz.targetManagement.model.FornecedorModel;
@@ -46,6 +48,7 @@ public class TesteMain {
 		ProdutoDAO produtoDAO = new ProdutoDAO();
 		LoteDAO loteDAO = new LoteDAO();
 		FabricaProdutoDAO fabricaProdutoDAO = new FabricaProdutoDAO();
+		AbastecimentoDAO abastecimentoDAO = new AbastecimentoDAO();
 		
 		
 		/*
@@ -72,6 +75,9 @@ public class TesteMain {
 		LoteModel lote = new LoteModel("555", fabrica, produto, 1000, 100, dataProducaoLote, 1000, 300);
 		
 		FabricaProdutoModel fabricaProduto = new FabricaProdutoModel("10","30");
+		
+		Date dataAbastecimento = formato.parse("2023-05-27");
+		AbastecimentoModel abastecimento = new AbastecimentoModel("10", "3", dataAbastecimento);
 		
 		/*
 		 * bloco para execução dos comandos e instruções
@@ -113,6 +119,12 @@ public class TesteMain {
 		System.out.println(fabricaProduto.toString());
 		//fabricaProdutoDAO.insert(fabricaProduto);
 		System.out.println("\nRecuperado os produtos produzidos na Fabrica [10]:\n" + fabricaProdutoDAO.getProdutosByFabrica("10"));
+		
+		System.out.println(abastecimento.toString());
+		//abastecimentoDAO.insert(abastecimento);
+		System.out.println("\nRecuperado as fabricas atendidas pelo fornecedor [3]" + abastecimentoDAO.getFabricaByFornecedores("3"));
+		
+		
 		
 	}
 
