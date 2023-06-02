@@ -101,6 +101,6 @@ private Connection conexao;
 		}
 		stmt.close();
 		rs.close();
-		return "A quantidade de produtos doados pelas fabricas até o momento é de :" + produtosDoados + "unidades.";
+		return "A quantidade de produtos doados pelas fabricas até o momento é de: " + produtosDoados + " unidades.";
 	}
 }

@@ -150,7 +150,7 @@ public class TesteMain {
 		 */
 		String insigth = "inicial";
 		while (!insigth.equalsIgnoreCase("quit")) {
-			insigth = JOptionPane.showInputDialog("Por Favor selecione uma das opções:\n[1] Metas em andamento\n[2] Consumo de energia\n[3] Produto com maior consumo de agua em sua fabricação\n[4] Quantidade de produtos doados\n[quit] Finalizar");	
+			insigth = JOptionPane.showInputDialog("Por Favor selecione uma das opções:\n[1] Metas em andamento\n[2] Consumo de energia em determinada fabrica\n[3] Produto com maior consumo de agua em sua fabricação\n[4] Quantidade de produtos doados\n[quit] Finalizar");	
 			
 			switch (insigth) {
 			case "1": {
