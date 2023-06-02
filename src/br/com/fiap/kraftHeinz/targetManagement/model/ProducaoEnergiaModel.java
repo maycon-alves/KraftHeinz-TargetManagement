@@ -68,7 +68,7 @@ public class ProducaoEnergiaModel {
 	@Override
 	public String toString() {
 		return "ProducaoEnergiaModel [idProducao=" + idProducao + ", quantidadeWatts=" + quantidadeWatts
-				+ ", dataProducao=" + dataProducao + ", fabrica=" + fabrica + "]";
+				+ ", dataProducao=" + dataProducao + ", fabrica=" + fabrica.getIdFabrica() + "]";
 	}
 
 }
