@@ -89,4 +89,18 @@ private Connection conexao;
 		return loteList;
 	}
 	
+	public String getProdutosDoados() throws SQLException {
+
+		Integer produtosDoados = 0;
+		String sql = "SELECT SUM(qt_doada) as doados FROM T_LOTE";
+		PreparedStatement stmt = conexao.prepareStatement(sql);
+
+		ResultSet rs = stmt.executeQuery();
+		while (rs.next()) {
+		produtosDoados = rs.getInt("doados");
+		}
+		stmt.close();
+		rs.close();
+		return "A quantidade de produtos doados pelas fabricas até o momento é de :" + produtosDoados + "unidades.";
+	}
 }

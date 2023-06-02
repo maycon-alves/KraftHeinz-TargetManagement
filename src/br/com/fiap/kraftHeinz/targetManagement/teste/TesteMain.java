@@ -150,19 +150,21 @@ public class TesteMain {
 		 */
 		String insigth = "inicial";
 		while (!insigth.equalsIgnoreCase("quit")) {
-			insigth = JOptionPane.showInputDialog("Por Favor selecione uma das opções:\n[1] Metas em andamento\n[2] Consumo de energia\n[3] Produto com maior consumo de agua em sua fabricação\n[quit] Finalizar");	
+			insigth = JOptionPane.showInputDialog("Por Favor selecione uma das opções:\n[1] Metas em andamento\n[2] Consumo de energia\n[3] Produto com maior consumo de agua em sua fabricação\n[4] Quantidade de produtos doados\n[quit] Finalizar");	
 			
 			switch (insigth) {
 			case "1": {
-				System.out.println(insigth);
+				MetaChallengeDAO metaDAO = new MetaChallengeDAO();
 				String idMeta = JOptionPane.showInputDialog("Insira o Identificador da meta: ");
-				//JOptionPane.showMessageDialog(null, "Recuperado o registro [meta-2]:\n" + metaDAO.selectById(idMeta).toString() + "\n");
+				JOptionPane.showMessageDialog(null, "Recuperado o registro [meta-2]:\n" + metaDAO.selectById(idMeta).toString() + "\n");
 				break;
 			}
 			case "2":{
 				//consumo de energia vs energia produzida
 				//merge das tabelas de lotes da mesma fabrica vs quantidade de watts da mesma fabrica no mesmo periodo
-				System.out.println(insigth);
+				EnergiaLoteFabricaInsigthTest consumo = new EnergiaLoteFabricaInsigthTest();
+				String resultado = consumo.recuperaPercentualAutoSustentavelFabrica(JOptionPane.showInputDialog("Insira o Identificador da fabrica que deseja analisar: "));
+				JOptionPane.showMessageDialog(null, resultado);
 				break;
 			}
 			case "3":{
@@ -175,6 +177,14 @@ public class TesteMain {
 				break;
 			}
 			case "4":{
+				//quantidade de produtos doados
+				LoteDAO loteDAO = new LoteDAO();
+				String resultado = loteDAO.getProdutosDoados();
+				JOptionPane.showMessageDialog(null, resultado);
+				System.out.println(insigth);
+				break;
+			}
+			case "5":{
 				//percentual de energia sustentavel utilizada em determinada fabrica em determinado periodo
 				System.out.println(insigth);
 				break;
