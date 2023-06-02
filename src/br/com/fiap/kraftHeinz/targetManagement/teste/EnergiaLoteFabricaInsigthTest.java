@@ -18,9 +18,13 @@ public class EnergiaLoteFabricaInsigthTest {
 		System.out.println(fabricaInsigth);
 		somaGastos(fabricaInsigth.getLoteEnergiaGasta());
 		somaEnergiaProduzida(fabricaInsigth.getFabricaEnergiaProduzida());
-		percentual = ((energiaProduzida*100)/energiaGasta);
-		return percentual + "% Da energia utilizada na fabrica [" + idFabrica + "] é proveniente de fonte sustentavel\nEnquanto a quantidade total de energia gasta na frabica foi de [" + energiaGasta + "] Watts,\n a quantidade total de energia produzida foi de [" + energiaProduzida
-				+ "] Watts";
+		if (energiaGasta > 0 && energiaGasta != null ) {
+			percentual = ((energiaProduzida*100)/energiaGasta);
+			return percentual + "% Da energia utilizada na fabrica [" + idFabrica + "] é proveniente de fonte sustentavel\nEnquanto a quantidade total de energia gasta na frabica foi de [" + energiaGasta + "] Watts,\n a quantidade total de energia produzida foi de [" + energiaProduzida
+					+ "] Watts";
+		}else {
+			return "0% da Da energia utilizada na fabrica [" + idFabrica + "] é proveniente de fonte sustentavel\nEnquanto a quantidade total de energia gasta na frabica foi de [" + energiaGasta + "] Watts,\n a fabrica não produziu energia";
+		}
 	}
 	
 	private void somaGastos(List<Integer> loteEnergiaGasta) {
