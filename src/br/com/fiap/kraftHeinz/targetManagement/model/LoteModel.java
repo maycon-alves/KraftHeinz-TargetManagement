@@ -31,6 +31,17 @@ public class LoteModel {
 		this.quantidadeEnergiaGasto = quantidadeEnergiaGasto;
 	}
 
+	public LoteModel(LoteModel lote) {
+		this.idLote = lote.getIdLote();
+		this.fabrica = lote.getFabrica();
+		this.produto = lote.getProduto();
+		this.quantidadeProduto = lote.getQuantidadeProduto();
+		this.quantidadeDoada = lote.getQuantidadeAguaGasto();
+		this.dataProducaoLote = lote.getDataProducaoLote();
+		this.quantidadeAguaGasto = lote.getQuantidadeAguaGasto();
+		this.quantidadeEnergiaGasto = lote.getQuantidadeEnergiaGasto();
+	}
+
 	public String getIdLote() {
 		return idLote;
 	}
@@ -119,9 +130,9 @@ public class LoteModel {
 
 	@Override
 	public String toString() {
-		return "LoteModel [idLote=" + idLote + ", fabrica=" + fabrica + ", produto=" + produto + ", quantidadeProduto="
-				+ quantidadeProduto + ", quantidadeDoada=" + quantidadeDoada + ", dataProducaoLote=" + dataProducaoLote
-				+ ", quantidadeAguaGasto=" + quantidadeAguaGasto + ", quantidadeEnergiaGasto=" + quantidadeEnergiaGasto
-				+ "]";
+		return "{idLote=" + idLote + ", \nfabrica=" + fabrica.getIdFabrica() + ", \nproduto=" + produto.getIdProduto() + ", \nquantidadeProduto="
+				+ quantidadeProduto + ", \nquantidadeDoada=" + quantidadeDoada + ", \ndataProducaoLote=" + dataProducaoLote
+				+ ", \nquantidadeAguaGasto=" + quantidadeAguaGasto + ", \nquantidadeEnergiaGasto=" + quantidadeEnergiaGasto
+				+ "\n}";
 	}
 }

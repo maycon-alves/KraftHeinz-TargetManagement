@@ -62,8 +62,8 @@ public class MetaChallengeModel {
 	@Override
 	public String toString() {
 		SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-		return "MetaChallengeModel [idMeta=" + idMeta + ", descricaoMeta=" + descricaoMeta + ", dataPrazo=" + formato.format(dataPrazo)
-				+ ", codigoMetaDone=" + codigoMetaDone + "]";
+		return "{\nidMeta=" + idMeta + ", \ndescricaoMeta=" + descricaoMeta + ", \ndataPrazo=" + formato.format(dataPrazo)
+				+ ", \ncodigoMetaDone=" + codigoMetaDone + "\n}";
 	}
 
 }

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.fiap.kraftHeinz.targetManagement.factory.ConnectionFactory;
 import br.com.fiap.kraftHeinz.targetManagement.model.LoteModel;
@@ -60,5 +62,31 @@ private Connection conexao;
 		
 	}
 	
+	public List<LoteModel> getAll() throws SQLException {
+
+		List<LoteModel> loteList = new ArrayList<LoteModel>();
+		String sql = "SELECT * FROM T_LOTE";
+		PreparedStatement stmt = conexao.prepareStatement(sql);
+
+		ResultSet rs = stmt.executeQuery();
+
+		while (rs.next()) {
+			LoteModel lote = new LoteModel();
+			lote.setIdLote(rs.getString("id_lote"));
+			lote.setFabricaId(rs.getString("fabrica_id_fabrica"));
+			lote.setProdutoId(rs.getString("produto_id_produto"));
+			lote.setQuantidadeProduto(rs.getInt("qt_produto"));
+			lote.setQuantidadeDoada(rs.getInt("qt_doada"));
+			lote.setDataProducao(rs.getDate("dt_producao"));
+			lote.setQuantidadeAguaGasto(rs.getInt("qt_agua_gasto"));
+			lote.setQuantidadeEnergiaGasto(rs.getInt("qt_energia_gasto"));
+
+			loteList.add(lote);
+		}
+
+		stmt.close();
+		rs.close();
+		return loteList;
+	}
 	
 }

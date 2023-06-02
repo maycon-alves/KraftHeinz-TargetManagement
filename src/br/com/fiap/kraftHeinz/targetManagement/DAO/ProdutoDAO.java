@@ -54,4 +54,23 @@ private Connection conexao;
 		
 	}
 	
+	public String selectProductNameById (String id) throws SQLException{
+		ProdutoModel produto = null;
+		String sql = "SELECT nm_nome FROM T_PRODUTO WHERE id_produto = ?";
+		PreparedStatement stmt = conexao.prepareStatement(sql);
+		stmt.setString(1, id);
+		ResultSet rs = stmt.executeQuery();
+		
+		while (rs.next()) {
+			produto = new ProdutoModel();
+			produto.setNomeProduto(rs.getString("nm_nome"));
+			
+		}
+		
+		rs.close();
+		stmt.close();
+		return produto.getNomeProduto();
+		
+	}
+	
 }
